@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello, Black Pepper!</title>
+        <meta charset="utf-8"> <!-- IMPORTANT -->
+        <script src="javascript/react.js"></script>
+        <script src="javascript/react-dom.js"></script>
+    </head>
+    <body>
+        <div id="app">
+        </div>
+        <script>
+         var Smile = React.createClass({
+             render: function() {
+                 return React.DOM.img({src: "images/smile.gif", style:
+                                       {width: this.props.size, height: this.props.size}});
+                 }
+             });
+         ReactDOM.render(
+             React.createElement(Smile, {size: 200}),
+             document.getElementById("app")
+             );
+        </script>
+    </body>
+</html>
