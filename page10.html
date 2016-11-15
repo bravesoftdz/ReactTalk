@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello, Black Pepper!</title>
+        <meta charset="utf-8"> <!-- IMPORTANT -->
+        <script src="javascript/react.js"></script>
+        <script src="javascript/react-dom.js"></script>
+        <script src="javascript/browser.js"></script>
+    </head>
+    <body>
+        <div id="app">
+        </div>
+        <script type="text/babel">
+         var Smile = React.createClass({
+             getInitialState: function() {
+                 return {
+                     angle: 12
+                 }
+             },
+             getDefaultProps: function() {
+                 return {
+                     size: 150
+                 }
+             },
+             propTypes: {
+                 size: React.PropTypes.number
+             },
+             clickIt: function() {
+                 this.setState({
+                     angle: this.state.angle + 45
+                 });
+             },
+             render: function() {
+                 var transform = "rotate(" + this.state.angle + "deg)";
+                 return React.DOM.div(null, 
+                     React.DOM.img({src: "images/smile.gif", style:
+                                    {width: this.props.size, height: this.props.size,
+                                     transform: transform}, onClick: this.clickIt}),
+                     React.DOM.h1(null, "Smile!")
+                 );
+             }
+         });
+         ReactDOM.render(
+             React.createElement(Smile),
+             document.getElementById("app")
+         );
+        </script>
+    </body>
+</html>
