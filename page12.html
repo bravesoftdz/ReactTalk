@@ -11,7 +11,7 @@
         <div id="app">
         </div>
         <script type="text/babel">
-         var Smile = React.createClass({
+           var Smile = React.createClass({
              getInitialState: function() {
                  return {
                      angle: 12
@@ -45,16 +45,16 @@
                     </div>
                  );
                }
-             });
-             var Smiles = React.createClass({
-               render: function() {
-                    return <span><Smile/><Smile size={100}/></span>;
-               }
-             });
-             ReactDOM.render(
-                 React.createElement(Smiles),
-                 document.getElementById("app")
-             );
+           });
+           var Smiles = React.createClass({
+             render: function() {
+                 return <span><Smile/><Smile size={100}/></span>;
+             }
+           });
+           ReactDOM.render(
+             React.createElement(Smiles),
+             document.getElementById("app")
+           );
         </script>
     </body>
 </html>
